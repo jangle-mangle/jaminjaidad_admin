@@ -15,7 +15,8 @@ use App\Http\Controllers\User\UserController;
 */
 
 Route::get('/', function () {
-  return view('index');
+  // return view('index');
+  return redirect('admin') ; 
 });
 
 //Auth::routes();

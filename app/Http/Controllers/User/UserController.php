@@ -528,12 +528,23 @@ class UserController extends Controller
     }
     public function enquiry(Request $request) { 
         $validation = Validator::make($request->all(), [
-            'property_type' => 'required',
-            'created_by' => 'required',
+            'name' => 'required',
+            'mobile' => 'required',
+            'email' => 'required',
+            'property_id' => 'required',
         ]);
 
         if ($validation->fails()) {
             return response()->json(['status' => false, 'message' => $validation->errors()->first()]);
+        }
+
+        $data = DB::table('enquaries')->insert($request->all()) ; 
+        if ($data) {
+            return response()->json(['status' => true, 'message' => "Submmited Successfully"]);
+
+        }
+        else { 
+            return response()->json(['status' => false, 'message' => "Something went wrong please try again later!"]);
         }
      }
 }

@@ -28,13 +28,14 @@ Route::group(['prefix' => 'v1'], function()
     Route::post('/verify_otp', [UserController::class, 'verify_otp']); 
     Route::post('/register', [UserController::class, 'submit_details']);
     Route::post('/resend_otp', [UserController::class, 'resend_otp']);
+    Route::post('/enquiry', [UserController::class, 'enquiry']);
+    Route::get('/all_properties', [UserController::class, 'all_properties']);
 
 
     Route::middleware('auth:api')->group(function()
     {
         Route::get('/get_profile', [UserController::class, 'get_profile']);
         Route::get('/my_property', [UserController::class, 'my_property']);
-        Route::get('/all_properties', [UserController::class, 'all_properties']);
         Route::post('/post_property', [UserController::class, 'post_property']);
         Route::post('/edit_profile', [UserController::class, 'edit_profile']);
         Route::get('/get_banner', [UserController::class, 'get_banner']);
