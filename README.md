@@ -1,4 +1,4 @@
-# Laravel Multi Auth 3U Skeleton (User, Admin & Sub Admin Setup)
+# multiauth jaminjaidad(User, Admin & Sub Admin Setup)
 
 This skelton comes with basic user auth setup with some packages & those are.
 
